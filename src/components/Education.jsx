@@ -2,8 +2,7 @@ import { useState } from "react";
 import InputSection from "./InputSection";
 
 
-function Education() {
-    const [education, setEducation] = useState({ school: '', title: '', date: ''});
+function Education({ cvData, setCvData }) {
     const [isEditing, setEditing] = useState(true);
 
 
@@ -16,8 +15,8 @@ function Education() {
             { name: 'date', placeholder: 'Date of Study', type: 'date' }
         ]}
 
-        data={education}
-        setData={setEducation}
+        data={cvData.education}
+        setData={(newData) => setCvData({ ...cvData, education: newData })}
         isEditing={isEditing}
         setEditing={setEditing}
         />

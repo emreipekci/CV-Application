@@ -2,8 +2,7 @@ import { useState } from "react";
 import InputSection from "./InputSection";
 
 
-function GeneralInfo() {
-    const [generalInfo, setGeneralInfo] = useState({ name: '', email: '', phone: ''});
+function GeneralInfo({ cvData, setCvData }) {
     const [isEditing, setEditing] = useState(true);
 
 
@@ -16,8 +15,8 @@ function GeneralInfo() {
             { name: 'phone', placeholder: 'Phone', type: 'tel' }
         ]}
 
-        data={generalInfo}
-        setData={setGeneralInfo}
+        data={cvData.generalInfo}
+        setData={(newData) => setCvData({ ...cvData, generalInfo: newData })}
         isEditing={isEditing}
         setEditing={setEditing}
         />

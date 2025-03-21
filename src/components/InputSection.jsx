@@ -1,5 +1,3 @@
-
-
 function InputSection({ title, fields, data, setData, isEditing, setEditing }) {
     return (
       <div className="section">

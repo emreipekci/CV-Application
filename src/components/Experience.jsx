@@ -2,8 +2,7 @@ import { useState } from "react";
 import InputSection from "./InputSection";
 
 
-function Experience() {
-    const [experience, setExperience] = useState({ company: '', position: '', responsibilities: '', from: '', until: ''});
+function Experience({ cvData, setCvData }) {
     const [isEditing, setEditing] = useState(true);
 
 
@@ -18,8 +17,8 @@ function Experience() {
             { name: 'until', placeholder: 'Until', type: 'date' }
         ]}
 
-        data={experience}
-        setData={setExperience}
+        data={cvData.experience}
+        setData={(newData) => setCvData({ ...cvData, experience: newData })}
         isEditing={isEditing}
         setEditing={setEditing}
         />

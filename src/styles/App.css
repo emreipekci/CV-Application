@@ -1,6 +1,31 @@
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+
+.container {
+  border: solid;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.section {
+  grid-column: 1;
+  grid-row: 2/5;   
+}
+
+.section:nth-child(1) {
+  grid-row: 2;
+}
+.section:nth-child(2) {
+  grid-row: 3;
+}
+.section:nth-child(3) {
+  grid-row: 4;
+}
+
+
+.display {
+  grid-column: 2;
+  grid-row: 2/5;
 }
 
 button {
